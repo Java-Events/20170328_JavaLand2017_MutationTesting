@@ -24,6 +24,7 @@ import static org.assertj.core.api.Assertions.*;
 public class M02Test {
 
 
+  @Test
   public void test001() throws Exception {
     Assert.assertEquals(-2, new M02().doWork(1,1));
   }

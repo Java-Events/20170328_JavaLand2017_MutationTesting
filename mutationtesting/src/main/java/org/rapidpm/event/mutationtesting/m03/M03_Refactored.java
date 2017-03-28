@@ -18,35 +18,22 @@ public class M03_Refactored implements M03 {
 
   public String[] discardCommonPrefix(String a, String b) {
     final String[] ret = new String[2];
-    int l;
+    int minLenght;
 
-    if (a.length() < b.length()) {
-      l = a.length();
-    } else {
-      l = b.length();
-    }
+    minLenght = Math.min(a.length(), b.length());
 
     int position = 0;
     //until first character differs
-    for (; position < l; position++) {
+    for (; position < minLenght; position++) {
       final char charA = a.charAt(position);
       final char charB = b.charAt(position);
       if (charA != charB) {
         break;
       }
     }
-
     // remaining filename parts
-    if (position >= a.length()) {
-      ret[0] = "";
-    } else {
-      ret[0] = a.substring(position);
-    }
-    if (position >= b.length()) {
-      ret[1] = "";
-    } else {
-      ret[1] = b.substring(position);
-    }
+    ret[0] = position >= a.length() ? "" : a.substring(position);
+    ret[1] = position >= b.length() ? "" : b.substring(position);
     return ret;
   }
 

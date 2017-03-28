@@ -2,7 +2,7 @@ package junit.org.rapidpm.event.mutationtesting.m03;
 
 import org.junit.Test;
 import org.rapidpm.event.mutationtesting.m03.M03;
-import org.rapidpm.event.mutationtesting.m03.M03_Legacy;
+import org.rapidpm.event.mutationtesting.m03.M03_Refactored;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
@@ -17,8 +17,8 @@ import static org.junit.Assert.fail;
 public class M03Test {
 
   private M03 create() {
-//    return new M03_Refactored();
-    return new M03_Legacy();
+    return new M03_Refactored();
+//    return new M03_Legacy();
   }
 
 
@@ -104,6 +104,23 @@ public class M03Test {
     assertEquals(2, result.length);
     assertEquals("a", result[0]);
     assertEquals("", result[1]);
+  }
+
+  //lenght a == b
+  @Test
+  public void testDiscardCommonPrefix006a() throws Exception {
+    String[] result = create().discardCommonPrefix("abcX", "abcB");
+    assertEquals(2, result.length);
+    assertEquals("X", result[0]);
+    assertEquals("B", result[1]);
+  }
+
+  @Test
+  public void testDiscardCommonPrefix006b() throws Exception {
+    String[] result = create().discardCommonPrefix("abcB", "abcX");
+    assertEquals(2, result.length);
+    assertEquals("B", result[0]);
+    assertEquals("X", result[1]);
   }
 
 }
