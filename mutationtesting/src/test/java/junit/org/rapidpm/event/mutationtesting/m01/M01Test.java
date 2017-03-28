@@ -27,6 +27,23 @@ public class M01Test {
     Assert.assertEquals(10, new M01().add001(0, 0));
   }
 
+  @Test
+  public void add001_002() throws Exception {
+    Assert.assertEquals(12, new M01().add001(1,1));
+  }
 
+  @Test
+  public void add001_003() throws Exception {
+    Assert.assertEquals(8, new M01().add001(-1,-1));
+  }
+
+  @Test
+  public void add002_001() throws Exception {
+    Assert.assertEquals(-10, new M01().add002(0,0));
+  }
+  @Test
+  public void add002_002() throws Exception {
+    Assert.assertEquals(12, new M01().add002(1,1));
+  }
 
 }
