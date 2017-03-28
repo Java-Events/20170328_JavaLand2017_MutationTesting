@@ -1,5 +1,7 @@
 .idea/*
 report/*
+jacoco.exec
+
 # Created by .ignore support plugin (hsz.mobi)
 .idea/**/workspace.xml
 .idea/**/tasks.xml
