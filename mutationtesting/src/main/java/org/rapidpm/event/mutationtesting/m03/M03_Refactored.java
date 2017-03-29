@@ -18,13 +18,13 @@ public class M03_Refactored implements M03 {
 
   public String[] discardCommonPrefix(String a, String b) {
     final String[] ret = new String[2];
-    int minLenght;
+    int minLength;
 
-    minLenght = Math.min(a.length(), b.length());
+    minLength = Math.min(a.length(), b.length());
 
     int position = 0;
     //until first character differs
-    for (; position < minLenght; position++) {
+    for (; position < minLength; position++) {
       final char charA = a.charAt(position);
       final char charB = b.charAt(position);
       if (charA != charB) {
